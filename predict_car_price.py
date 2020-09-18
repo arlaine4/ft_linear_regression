@@ -33,7 +33,7 @@ if __name__ == "__main__":
 	if options.graph:
 		#---------------------------------------#
 		# Si option graph, preparation donnees
-		# pour tracer du graph
+		# pour le trace du graph
 		#---------------------------------------#
 		try:
 			data = pd.read_csv("data.csv")
