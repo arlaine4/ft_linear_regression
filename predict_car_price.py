@@ -51,12 +51,14 @@ if __name__ == "__main__":
 		# Si l'argument de graph est renseigne, on affiche le
 		# graph avec matplotlib.pyplot
 		#-----------------------------------------------------#
-		axes = plt.axes()
-		axes.grid()
-		plt.scatter(X, Y)
-		plt.plot(X, line, c='g')
-		plt.title('Estimated price for {} Km'.format(options.kms))
-		plt.show()
+                axes = plt.axes()
+                axes = plt.grid()
+                plt.scatter(data['km'].values, data['price'].values)
+                plt.plot(X, line, c='r')
+                plt.title('Linear Regression for price/mileage')
+                plt.xlabel('Mileage')
+                plt.ylabel('Price')
+                plt.show()
 		#-----------------------------------------------------#
 	
 	

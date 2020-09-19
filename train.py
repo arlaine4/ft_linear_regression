@@ -46,22 +46,13 @@ def	calcul_thetas(X, Y, X_old, Y_old, learning_rate):
 	return thetas
 
 if __name__ == "__main__":
-	try:
-		data = pd.read_csv("data.csv")
-		X, Y, X_old, Y_old = read_inside_data(data)
-	except:
-		print("Error with data.csv, stopping now.")
-		exit()
-	thetas = calcul_thetas(X, Y, X_old, Y_old, 1)
-	thetas_csv(thetas)
-	#---------------------------#
-	# Graph regression lineaire
-	#---------------------------#
-	line = thetas[0] + thetas[1] * X_old
-	plt.scatter(data['km'].values, data['price'].values)
-	plt.plot(X_old,line, c='r')
-	plt.title('Estimation prix')
-	plt.xlabel('Kilometrage')
-	plt.ylabel('Prix')
-	plt.show()
-	#---------------------------#
+        try:
+                data = pd.read_csv("data.csv")
+                X, Y, X_old, Y_old = read_inside_data(data)
+        except:
+                print("Error with data.csv, stopping now.")
+                exit()
+        thetas = calcul_thetas(X, Y, X_old, Y_old, 1)
+        thetas_csv(thetas)
+        print("\033[32;3mDone writting thetas in thetas.csv ✅\033[0m")
+        print("\033[32;3mJust cat thetas.csv if you want to see the values.")
